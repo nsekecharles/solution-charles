@@ -1,0 +1,58 @@
+package com.fa.test;
+
+import com.fa.test.book.Book;
+import com.fa.test.drug.Drug;
+import com.fa.test.food.Food;
+import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class ProductFactoryTest {
+
+    private List<Class> productSubClasses = Arrays.asList(Food.class, Drug.class, Book.class);
+    private ProductFactory sut = new ProductFactory();
+
+    @Test
+    public void should_return_a_product_given_unknown_type_product_name() throws Exception {
+
+        // When
+        Product product = sut.create(1, "produit de type inconnu", 12.0);
+
+        // Then
+        assertThat(product).isInstanceOf(Product.class);
+        assertThat(product).isNotInstanceOfAny((Class<?>[]) productSubClasses.toArray());
+    }
+
+    @Test
+    public void should_return_a_book_given_book_product_name() throws Exception {
+
+        // When
+        Product product = sut.create(1, Configuration.BOOKS.get(0), 12.0);
+
+        // Then
+        assertThat(product).isInstanceOf(Book.class);
+    }
+
+    @Test
+    public void should_return_a_food_given_food_product_name() throws Exception {
+
+        // When
+        Product product = sut.create(1, Configuration.FOODS.get(0), 12.0);
+
+        // Then
+        assertThat(product).isInstanceOf(Food.class);
+    }
+
+    @Test
+    public void should_return_a_drug_given_food_product_name() throws Exception {
+
+        // When
+        Product product = sut.create(1, Configuration.DRUGS.get(0), 12.0);
+
+        // Then
+        assertThat(product).isInstanceOf(Drug.class);
+    }
+}
