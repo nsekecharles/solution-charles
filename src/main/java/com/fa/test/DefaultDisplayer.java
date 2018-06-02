@@ -1,5 +1,8 @@
 package com.fa.test;
 
+import com.fa.test.bill.Bill;
+import com.fa.test.product.Product;
+
 import static com.fa.test.Configuration.numberFormat;
 import static java.util.stream.Collectors.joining;
 

@@ -1,9 +1,13 @@
 package com.fa.test;
 
-import org.assertj.core.api.Assertions;
+import com.fa.test.taxe.DefaultTaxeCalculator;
+import com.fa.test.taxe.Taxe;
+import com.fa.test.taxe.TaxeCalculator;
 import org.junit.Test;
 
-public class DefaultTaxeCalculatorTest {
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class DefaultTaxeCalculatorTest extends TaxeCalculatorTest {
 
     private DefaultTaxeCalculator sut = new DefaultTaxeCalculator();
 
@@ -17,7 +21,12 @@ public class DefaultTaxeCalculatorTest {
         Taxe taxe = sut.getTaxe(price, false);
 
         // Then
-        Assertions.assertThat(taxe).isEqualTo(new Taxe(1.0, 0));
+        assertThat(taxe).isEqualTo(new Taxe(1.0, 0));
 
+    }
+
+    @Override
+    public TaxeCalculator getCalculatorToTest() {
+        return sut;
     }
 }

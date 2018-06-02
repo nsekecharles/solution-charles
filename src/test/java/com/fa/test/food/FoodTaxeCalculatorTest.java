@@ -1,12 +1,12 @@
 package com.fa.test.food;
 
-import com.fa.test.Taxe;
-import com.fa.test.TaxeCalculator;
-import com.fa.test.TaxeCalulatorTest;
+import com.fa.test.taxe.Taxe;
+import com.fa.test.taxe.TaxeCalculator;
+import com.fa.test.TaxeCalculatorTest;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
-public class FoodTaxeCalculatorTest extends TaxeCalulatorTest {
+public class FoodTaxeCalculatorTest extends TaxeCalculatorTest {
 
     private FoodTaxeCalculator sut = new FoodTaxeCalculator();
 

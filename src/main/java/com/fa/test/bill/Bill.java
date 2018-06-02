@@ -1,4 +1,8 @@
-package com.fa.test;
+package com.fa.test.bill;
+
+import com.fa.test.Displayable;
+import com.fa.test.Displayer;
+import com.fa.test.product.Product;
 
 import java.util.ArrayList;
 import java.util.List;

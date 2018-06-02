@@ -1,10 +1,12 @@
 package com.fa.test;
 
+import com.fa.test.taxe.Taxe;
+import com.fa.test.taxe.TaxeCalculator;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public abstract class TaxeCalulatorTest {
+public abstract class TaxeCalculatorTest {
 
     @Test
     public void should_have_importation_taxe_for_imported_product() {

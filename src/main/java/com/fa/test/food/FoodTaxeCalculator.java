@@ -1,6 +1,6 @@
 package com.fa.test.food;
 
-import com.fa.test.TaxeCalculator;
+import com.fa.test.taxe.TaxeCalculator;
 
 public class FoodTaxeCalculator implements TaxeCalculator {
 

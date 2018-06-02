@@ -1,6 +1,6 @@
-import com.fa.test.Bill;
+import com.fa.test.bill.Bill;
 import com.fa.test.Configuration;
-import com.fa.test.ProductFactory;
+import com.fa.test.product.ProductFactory;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -17,7 +17,6 @@ public class PrintBillSteps {
 
     @Given("(\\d+) (.*) à (\\d+.\\d+)")
     public void aProduct(int quantiy, String name, double price) throws Throwable {
-
         billToPrint.addProduct(new ProductFactory().create(quantiy, name, price));
     }
 
@@ -31,12 +30,11 @@ public class PrintBillSteps {
 
         final String expectedDisplayedBill = rows.stream().map(r->r.getRow()).collect(joining("\n"));
 
-        System.out.print(expectedDisplayedBill);
-
-        assertThat(billToPrint.display(Configuration.displayer)).isEqualTo(expectedDisplayedBill);
+        assertThat(displayedBill).isEqualTo(expectedDisplayedBill);
     }
 
     public class BillRow {
+
         private String row;
 
         public String getRow() {

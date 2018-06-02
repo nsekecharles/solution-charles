@@ -1,12 +1,13 @@
-package com.fa.test;
+package com.fa.test.product;
 
 import com.fa.test.book.Book;
 import com.fa.test.drug.Drug;
 import com.fa.test.food.Food;
+import com.fa.test.taxe.DefaultTaxeCalculator;
 
 import java.util.Optional;
 
-import static com.fa.test.Product.isImported;
+import static com.fa.test.product.Product.isImported;
 
 public class ProductFactory {
 

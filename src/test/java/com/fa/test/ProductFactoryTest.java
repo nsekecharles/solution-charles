@@ -3,6 +3,8 @@ package com.fa.test;
 import com.fa.test.book.Book;
 import com.fa.test.drug.Drug;
 import com.fa.test.food.Food;
+import com.fa.test.product.Product;
+import com.fa.test.product.ProductFactory;
 import org.junit.Test;
 
 import java.util.Arrays;

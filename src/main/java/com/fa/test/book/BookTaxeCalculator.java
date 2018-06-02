@@ -1,6 +1,6 @@
 package com.fa.test.book;
 
-import com.fa.test.TaxeCalculator;
+import com.fa.test.taxe.TaxeCalculator;
 
 public class BookTaxeCalculator implements TaxeCalculator {
 

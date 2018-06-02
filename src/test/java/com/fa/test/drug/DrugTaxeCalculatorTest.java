@@ -1,13 +1,13 @@
 package com.fa.test.drug;
 
-import com.fa.test.Taxe;
-import com.fa.test.TaxeCalculator;
-import com.fa.test.TaxeCalulatorTest;
+import com.fa.test.taxe.Taxe;
+import com.fa.test.taxe.TaxeCalculator;
+import com.fa.test.TaxeCalculatorTest;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class DrugTaxeCalculatorTest extends TaxeCalulatorTest {
+public class DrugTaxeCalculatorTest extends TaxeCalculatorTest {
 
     private DrugTaxeCalculator sut = new DrugTaxeCalculator();
 

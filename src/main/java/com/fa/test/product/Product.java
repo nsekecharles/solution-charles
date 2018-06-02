@@ -1,5 +1,9 @@
-package com.fa.test;
+package com.fa.test.product;
 
+
+import com.fa.test.Displayable;
+import com.fa.test.Displayer;
+import com.fa.test.taxe.Taxe;
 
 public class Product implements Displayable {
 

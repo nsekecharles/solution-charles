@@ -2,11 +2,10 @@ package com.fa.test;
 
 import org.junit.Test;
 
-import static com.fa.test.Product.isImported;
+import static com.fa.test.product.Product.isImported;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ProductTest {
-
 
     @Test
     public void product_name_ending_with_importe_is_imported() throws Exception {

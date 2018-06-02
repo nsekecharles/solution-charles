@@ -1,8 +1,9 @@
-package com.fa.test;
+package com.fa.test.product;
 
 import com.fa.test.book.BookTaxeCalculator;
 import com.fa.test.drug.DrugTaxeCalculator;
 import com.fa.test.food.FoodTaxeCalculator;
+import com.fa.test.taxe.TaxeCalculator;
 
 import java.util.List;
 import java.util.Optional;

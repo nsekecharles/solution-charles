@@ -1,4 +1,4 @@
-package com.fa.test;
+package com.fa.test.taxe;
 
 public class Taxe {
 
@@ -32,5 +32,10 @@ public class Taxe {
                     && taxe.getImportationTaxe() == this.getImportationTaxe();
         }
         return super.equals(obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }
