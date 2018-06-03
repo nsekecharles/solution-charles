@@ -6,6 +6,8 @@ import com.fa.test.food.Food;
 import com.fa.test.product.Product;
 import com.fa.test.product.ProductFactory;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.Rule;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,6 +18,9 @@ public class ProductFactoryTest {
 
     private List<Class> productSubClasses = Arrays.asList(Food.class, Drug.class, Book.class);
     private ProductFactory sut = new ProductFactory();
+
+    @Rule
+    public ExpectedException exception = ExpectedException.none();
 
     @Test
     public void should_return_a_product_given_unknown_type_product_name() throws Exception {
@@ -56,5 +61,50 @@ public class ProductFactoryTest {
 
         // Then
         assertThat(product).isInstanceOf(Drug.class);
+    }
+
+    @Test
+    public void should_not_create_a_product_without_a_name() throws Exception {
+
+        exception.expect(InvalidProductException.class);
+        exception.expectMessage("Product name is absent");
+
+        sut.create(1, "", 12.0);
+    }
+
+    @Test
+    public void should_not_create_a_product_with_a_negative_price() throws Exception {
+
+        exception.expect(InvalidProductException.class);
+        exception.expectMessage("Product price should not be equals or less than 0");
+
+        sut.create(1, "invalid product", -12.0);
+    }
+
+    @Test
+    public void should_not_create_a_product_with_a_price_of_0() throws Exception {
+
+        exception.expect(InvalidProductException.class);
+        exception.expectMessage("Product price should not be equals or less than 0");
+
+        sut.create(1, "invalid product", 0.0);
+    }
+
+    @Test
+    public void should_not_create_a_product_with_a_quantity_of_0() throws Exception {
+
+        exception.expect(InvalidProductException.class);
+        exception.expectMessage("Product quantity should not be equals or less than 0");
+
+        sut.create(0, "invalid product", 1.0);
+    }
+
+    @Test
+    public void should_not_create_a_product_with_a_negative_quantity() throws Exception {
+
+        exception.expect(InvalidProductException.class);
+        exception.expectMessage("Product quantity should not be equals or less than 0");
+
+        sut.create(-1, "invalid product", 1.0);
     }
 }

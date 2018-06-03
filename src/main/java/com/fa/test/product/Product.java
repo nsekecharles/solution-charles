@@ -7,6 +7,7 @@ import com.fa.test.taxe.Taxe;
 
 public class Product implements Displayable {
 
+    public static final String IMPORTED_PRODUCTS_REGEXP = ".*(importé|importée|importés)$";
     private final int quantity;
     private final String name;
     private final double price;
@@ -40,6 +41,6 @@ public class Product implements Displayable {
     }
 
     public static boolean isImported(String name) {
-        return name != null && name.matches(".*(importé|importée|importés)$");
+        return name != null && name.matches(IMPORTED_PRODUCTS_REGEXP);
     }
 }

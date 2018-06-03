@@ -25,7 +25,7 @@ public class Bill implements Displayable {
 
     public double getTotalPriceIncludingTaxes() {
         return orderedProducts.stream()
-                .mapToDouble(o -> o.getPrice() + o.getTaxe().getTotalTaxe())
+                .mapToDouble(product -> product.getPrice() + product.getTaxe().getTotalTaxe())
                 .sum();
     }
 
