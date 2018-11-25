@@ -1,3 +1,3 @@
 # solution-charles
 
-[![Coverage Status](https://coveralls.io/repos/github/nsekecharles/solution-charles/badge.svg?branch=master)](https://coveralls.io/github/nsekecharles/solution-charles?branch=master)
+[![codecov](https://codecov.io/gh/nsekecharles/solution-charles/branch/master/graph/badge.svg)](https://codecov.io/gh/nsekecharles/solution-charles)
