@@ -2,6 +2,7 @@ group 'com.fa.test'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'jacoco'
 
 sourceCompatibility = 1.8
 
@@ -20,3 +21,11 @@ dependencies {
             'org.assertj:assertj-core:3.6.2'
 
 }
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}
+
+check.dependsOn jacocoTestReport
